@@ -5,34 +5,38 @@ function add(a, b) {
 }
 
 // Anonymous function for subtraction
-const subtract = function(a, b) {
-    // TODO: Implement subtraction
+const subtract = function (a, b) {
+    return a - b
 };
 
 // Arrow function for multiplication
 const multiply = (a, b) => {
-    // TODO: Implement multiplication
+    return a * b
 };
 
 // Named function for division
 function divide(a, b) {
-    // TODO: Implement division with check for division by zero
+    return a / b
 }
 
 // Calculator object with methods
 const calculator = {
     equation: '',
-    // TODO: assign the add, subtract, multiply and divide functions to obect properties
+    add: add,
+    subtract: subtract,
+    multiply: multiply,
+    divide: divide,
 
-    updateEquation: function(value) {
-        // TODO: Implement update equation logic
+    updateEquation: function (value) {
+        this.equation += value
         document.getElementById('equation').value = this.equation;
     },
-    clearEquation: function() {
-        // TODO: Implement clear equation logic
+    clearEquation: function () {
+        this.equation = ''
         document.getElementById('equation').value = this.equation;
+
     },
-    calculate: function() {
+    calculate: function () {
         const equation = this.equation.split(' ');
         const a = parseFloat(equation[0]);
         const operation = equation[1];
