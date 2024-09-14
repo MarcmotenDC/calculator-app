@@ -75,7 +75,7 @@ document.querySelectorAll('button[name="input"]').forEach(button => {
 document.querySelectorAll('button[name="operation"]').forEach(button => {
     button.addEventListener('click', (event) => {
         const value = event.target.value;
-        calculator.updateEquation(`${value}`)
+        calculator.updateEquation(` ${value} `)
     });
 });
 
