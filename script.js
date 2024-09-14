@@ -1,7 +1,7 @@
 
 // Named function for addition
 function add(a, b) {
-    // TODO: Implement addition
+    return a + b
 }
 
 // Anonymous function for subtraction
