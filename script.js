@@ -45,16 +45,16 @@ const calculator = {
 
         switch (operation) {
             case '+':
-                result = // TODO: Implement call to add method using `this`
+                result = this.add(a, b)
                 break;
             case '-':
-                result = // TODO: Implement call to subtract method using `this`
+                result = this.subtract(a, b)
                 break;
             case '*':
-                result = // TODO: Implement call to multiply method using `this`
+                result = this.multiply(a, b)
                 break;
             case '/':
-                result = // TODO: Implement call to divide method using `this`
+                result = this.divide(a, b)
                 break;
             default:
                 result = 'Invalid Operation';
@@ -68,22 +68,21 @@ const calculator = {
 document.querySelectorAll('button[name="input"]').forEach(button => {
     button.addEventListener('click', (event) => {
         const value = event.target.value;
-        // TODO: Add call to updateEquation and pass value as an argument
+        calculator.updateEquation(value)
     });
 });
 
 document.querySelectorAll('button[name="operation"]').forEach(button => {
     button.addEventListener('click', (event) => {
         const value = event.target.value;
-        // TODO: Add call to updateEquation and pass value as an argument
-        // NOTE: This passes the selected operation as part of a text string
+        calculator.updateEquation(`${value}`)
     });
 });
 
 document.querySelector('button[name="calculate"]').addEventListener('click', () => {
-    // TODO: Add call to calculate() result and update display
+    calculator.calculate()
 });
 
 document.querySelector('button[name="clear"]').addEventListener('click', () => {
-    // TODO: Clear the display
+    calculator.clearEquation()
 });
